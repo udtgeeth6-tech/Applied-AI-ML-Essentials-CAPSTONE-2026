@@ -58,4 +58,19 @@ If the column has no missing values produce exactly same output because fillna()
 Dataset grouped by COMPANY column and the mean standard deviation and count of price calculated.
 Company with highest average price -High standard deviation indicates aptop price varies considerably within the company.
 Ratio of highest group mean was ratio,Larger ratio shows company carries useful predictive information, average price differs across company. RAM CPU STORAGEneeded for accurate price distribution.grouby.agg['mean','standard','count']) Null % table printed for all column.
-
+**Saved in part1 folder**
+Laptop-Price-Prediction/
+│
+├── Part1/
+│   ├── Part1.ipynb
+│   ├── cleaned_data.csv
+│   ├── laptop_data.csv          
+│   ├── README.md
+│   ├── line_plot.png
+│   ├── bar_chart.png
+│   ├── histogram.png
+│   ├── scatter_plot.png
+│   ├── box_plot.png
+│   └── correlation_heatmap.png
+│
+└── .gitignore (optional)
