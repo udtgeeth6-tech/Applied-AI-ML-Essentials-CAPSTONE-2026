@@ -1,4 +1,5 @@
-**Foundation work flow**
+LAPTOP DATA ANALYSIS****
+Foundation work flow**
 Data cleaning and Feature Engineering
 Laptop_data csv is a raw dataset collected with 1303 rows and 12 columns stored.The goal of this part1 is 
 to transform raw data into a structured numeric and categorical format suitable for machine learning.
