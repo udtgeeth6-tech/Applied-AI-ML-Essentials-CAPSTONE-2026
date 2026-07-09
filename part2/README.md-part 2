@@ -1,1 +1,42 @@
+Build, Train, and Evaluate
+Task 1 :Define
+The cleaned dataset loaded from part1. 1.REGRESSION LABEL  -Price (y-reg)laptop price treated as continous numeric variable.
+                                       2.CLASSIFICATION LABEL-Touch screen -(y-clf) Binary feature derived from Screen Resolution.
+0 means non touch screen laptop , 1 means Touch screen laptop. Feature matrix  X,all remaining columns except target variable.
+This transforms regression problem into a binary classification problem that predicts whether laptop belonged to higher or lowered price.
+## Label Definitions
 
+### Feature Matrix (X)
+
+The feature matrix **X** consists of all predictor variables in the dataset except the target variable **Price**. These features include laptop characteristics such as company, laptop type, RAM, storage, CPU, GPU, operating system, screen specifications, weight, and other attributes.
+
+### Regression Label (y_reg)
+
+The regression target variable is:
+
+**Price**
+
+* Type: Continuous numeric variable
+* Purpose: Predict the actual price of a laptop.
+* Used for: Linear Regression and Ridge Regression models.
+
+### Classification Label (y_clf)
+
+The classification target variable is derived from the Price column using the median price as a threshold:
+
+y_clf = (Price > median(Price)).astype(int)
+
+Class definitions:
+
+* **0** = Laptop price is less than or equal to the median price.
+* **1** = Laptop price is greater than the median price.
+
+This transforms the regression problem into a binary classification problem that predicts whether a laptop belongs to the higher-priced or lower-priced group.
+
+### Summary
+
+| Variable | Description               | Type              |
+| -------- | ------------------------- | ----------------- |
+| X        | All features except Price | Feature Matrix    |
+| y_reg    | Price                     | Continuous Target |
+| y_clf    | Price > Median Price      | Binary Target     |
