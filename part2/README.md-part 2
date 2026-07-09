@@ -40,3 +40,66 @@ This transforms the regression problem into a binary classification problem that
 | X        | All features except Price | Feature Matrix    |
 | y_reg    | Price                     | Continuous Target |
 | y_clf    | Price > Median Price      | Binary Target     |
+
+Task 2  ENCODE CATEGORICAL COLUMN
+The dataset contains categorical variable such as company, Type name , Screen resolution , CPU ,memory, GPU
+Ordinal encoding
+No categorical column in the dataset like natural order(low.medium,high) So Ordinal -label encoding is not applied here.
+ONE HOT ENCODING
+All categorical column has encoded using one hot encoding  with drop first =true. APPLE   DELL   HP (apple dropped as reference category.
+These categories do not have any order.Label encoding assigns arbitarily numeric vallue such as Apple=0, Dell=1,  HP =2.
+One hot encoding creates seperate binary indicators for each category.Preserving category information without artificial ordering.
+
+TASK 3 Leak free Train test split
+TRAIN TEST SPLIT AND FEATURE SCALING
+Dataset is divided into 80%-20%_ train test split xy, test size 0.2 and random state  42. Feature scaling performed using standard scaler.
+Scaler fitted on training data (Scaler.fit(xtrain)) Fitted scaler used to transform both training and test data. Fitting entire on scaler data before
+train test data split would constitute data leakage.To prevnt datascaler fitted exclusively on training data.The fitted scaler when applied to test
+data remained completely unseen during  training providing a fair evaluation of model performance efficiently and effectively.
+Task 4 REGRESSION MODEL-LINEAR REGRESSION
+Target variable-Price
+The linear regression model trained using scaled trainingb data . The model predicts laptop prices using MSE and R2. A large positive coefficient and large
+negative coefficient increasing the corresponding scaled feature a standard deviation associated with the increase in the predicted laptop 
+by the co efficient value holding other feature.  MODEL 2 Ridge regression :Trained with the same split and scaled features with alpha = 1.0
+The alpha parameter controls the strength of penalty.Ordinary Least square (Linear regression ) minimise prediction error.
+MODEL INEAR REGRESSION:MSE 3.891550e+08  R2 0.746773
+MODEL RIDGE REGRESSION:MSE 3.010051e+08  R2 0.804133
+TASK 5  CLASSIFICATION MODEL
+Precision and Recall  TP      TRUE POSSITIVE            FP       FALSE POSITIVE          FN        FALSE NEGATIVE
+PRECISION = TP /TP+FP  How many instances predicted positive.
+RECALL= TP / (TP+FN)  How many positive instances identified correctly by the modlel.
+Classification CLASS 1  Price greater than median value            CLASS 0 price less than are equal to median price
+Decision theshold       
+Logistic regression model evaluated using threshold 0.30-0.70  .Highest F1 score obtained at threshold 0.30
+Precision        0.8897                     Recall         0.9308                    F1             0.9098
+0.30 is the optimal threshold among the tested values.
+classification model divides class 0   price at below the median             class   1 :price above median 
+Recall is more important to identify as many as high priced laptops.A False negative occurs when high price laptop incorrectly priced low.
+To optimise recall the threshold is lowered.So high priced laptop as possible the priority lowered threshold such as 0.30 prefered.
+Task 6 Regularaization
+In logistic regression the parameter C control the strength of regularaization. Large C  weaker and small c stronger reularaization.
+reducing 1.0 - 0.01 applies much stronger L2 penalty causing model coefficient to shrink towards 0.
+Comparing precision recall and AUC whether strong regularaization improved performance on the data set.
+
+
+                          Model  Precision  Recall     AUC
+0   Logistic Regression (C=1.0)     0.9262  0.8692  0.9618
+1  Logistic Regression (C=0.01)     0.9360  0.9000  0.9734
+
+TASK 7  BOOTSTRAP CONFIDENCE
+A bootstrap analysis was performed using 500 bootstrap samples test set observations:
+AUC c=1.0 model computed 
+AUC c= 0.01 model computed . AUC difference- AUC(c=1.0) - AUC(c=0.1) 500 AUC was summarised using its mean a 95% bootstrap confidence intervel.
+RESULT
+MEAN AUC Difference  -0.01144
+2.5th percentile     - 0.02368
+97.5th percentile   - 0.000406
+If 95% confidence include 0  AUC difference  is due to random sampling variation.
+If 95% confidence exclude 0 the difference in AUC between 2 models likely consistent across different samples of data.
+Finally part 2 notebook is created and executed sucessfully!. AUC curve saved.
+
+
+
+
+
+
