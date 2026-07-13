@@ -1,1 +1,10 @@
-
+MY front end page is created using vs code. In the terminal it was executed \part4\python -m streamlit run.app
+The localhost browser : http://localhost:8501/ the front end attractive page is displayed with readme links. 
+All the part4 from navigation hub linked with github respository as required.
+All the parts are pushed to git hub rep and the links are provided.
+About the project, Overview Dashboard are designed in such a way in the side panel.
+Logo of Masai inserted at the top right side.
+conclusion
+The laptop industry has officially entered the AI-PC era. Future market growth is no longer driven purely by raw 
+graphics power or traditional CPU clock speeds, but by thermal efficiency and onboard AI processing capabilities. 
+For developers and retailers, targeting the thin-and-light performance tier is currently the highest-yielding strategy.
